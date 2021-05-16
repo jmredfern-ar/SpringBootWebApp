@@ -11,25 +11,39 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.redfern.java_course_spring_2021.SpringBootWebApp.DAO.StudentDAO;
 import com.redfern.java_course_spring_2021.SpringBootWebApp.Model.Student;
 import com.redfern.java_course_spring_2021.SpringBootWebApp.Service.StudentService;
 
-@RestController
-@RequestMapping("api/v1/student") //localhost:8080/api/vi/student
+@Controller
 public class StudentController {
 	
-	//MEM VARS
-	private final StudentService studentService;
-		
 	@Autowired
-	public StudentController(StudentService studentService) {
-		super();
-		this.studentService = studentService;
+	StudentDAO studentDAO;
+	
+//	//MEM VARS
+//	private final StudentService studentService;
+//		
+//	@Autowired
+//	public StudentController(StudentService studentService) {
+//		super();
+//		this.studentService = studentService;
+//	}
+//	
+//	@GetMapping
+//	public List<Student> getStudents() {
+//		return studentService.getStudents();
+//	}
+	
+	@RequestMapping("api/v1/student")
+	public String studentJSP() {
+		return "student.html";
 	}
 	
-	@GetMapping
-	public List<Student> getStudents() {
-		return studentService.getStudents();
+	@RequestMapping("api/v1/addStudent")
+	public String addStudent(Student student) {
+		studentDAO.save(student);
+		return "student.html";
 	}
 
 }
