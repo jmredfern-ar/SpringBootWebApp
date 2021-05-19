@@ -5,4 +5,4 @@ insert into student(id, name, email, dob, age) values (103, 'Hawk Eye', 'arrowGu
 INSERT INTO course(id, name, department, instructor) VALUES (900, 'Western Civilization', 'History', 'Dr. Farnsworth');
 INSERT INTO course(id, name, department, instructor) VALUES (901, 'Organic Chemistry', 'Chemistry', 'Dr. OverStreet');
 INSERT INTO course(id, name, department, instructor) VALUES (902, 'The History of Star Trek', 'Astrophysics', 'Dr. James Tiberius Kirk');
-INSERT INTO course(id, name, department, instructor) VALUES (904, 'Magic the Gathering - Intro to Basics', 'Magic', 'Dr. Jeffrey Paladin');
+INSERT INTO course(id, name, department, instructor, student_id) VALUES (904, 'Magic the Gathering - Intro to Basics', 'Magic', 'Dr. Jeffrey Paladin', 101);

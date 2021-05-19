@@ -17,5 +17,4 @@ public class CourseController {
 	public String course() {
 		return "Course Page";
 	}
-
 }

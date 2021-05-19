@@ -1,9 +1,10 @@
 package com.redfern.java_course_spring_2021.SpringBootWebApp.Model;
 
 import java.time.LocalDate;
-
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Student {
@@ -15,6 +16,9 @@ public class Student {
 	private String email;
 	private LocalDate dob;
 	private Integer age;
+	
+	@OneToMany(mappedBy = "student")
+	private List<Course> courses;
 	
 	// CONSTRUCTORS
 	public Student() {
@@ -28,6 +32,18 @@ public class Student {
 		this.email = email;
 		this.dob = dob;
 		this.age = age;
+	}
+	
+	
+
+	public Student(Long id, String name, String email, LocalDate dob, Integer age, List<Course> courses) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.dob = dob;
+		this.age = age;
+		this.courses = courses;
 	}
 
 	//GETTERS & SETTERS
@@ -69,6 +85,15 @@ public class Student {
 
 	public void setAge(Integer age) {
 		this.age = age;
+	}
+	
+	
+	public List<Course> getCourses() {
+		return courses;
+	}
+
+	public void setCourses(List<Course> courses) {
+		this.courses = courses;
 	}
 
 	@Override

@@ -2,6 +2,7 @@ package com.redfern.java_course_spring_2021.SpringBootWebApp.Model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Course {
@@ -11,6 +12,9 @@ public class Course {
 	private String name;
 	private String department;
 	private String instructor;
+	
+	@ManyToOne
+	private Student student;
 	
 	// CONSTRUCTORS
 	public Course() {
@@ -30,6 +34,17 @@ public class Course {
 		this.name = name;
 		this.department = department;
 		this.instructor = instructor;
+	}
+	
+	
+
+	public Course(Long id, String name, String department, String instructor, Student student) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.department = department;
+		this.instructor = instructor;
+		this.student = student;
 	}
 
 	public Long getId() {
@@ -62,6 +77,14 @@ public class Course {
 
 	public void setInstructor(String instructor) {
 		this.instructor = instructor;
+	}
+	
+	public Student getStudent() {
+		return student;
+	}
+
+	public void setStudent(Student student) {
+		this.student = student;
 	}
 
 	@Override
