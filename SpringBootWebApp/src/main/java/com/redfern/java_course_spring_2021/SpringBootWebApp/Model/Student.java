@@ -23,10 +23,13 @@ public class Student {
 	// CONSTRUCTORS
 	public Student() {
 		super();
+		System.out.println("Student constructor called...");
+		System.out.println(this.getName());
 	}
 
 	public Student(Long id, String name, String email, LocalDate dob, Integer age) {
 		super();
+		System.out.println("Called constructor 5 parms");
 		this.id = id;
 		this.name = name;
 		this.email = email;
@@ -38,6 +41,7 @@ public class Student {
 
 	public Student(Long id, String name, String email, LocalDate dob, Integer age, List<Course> courses) {
 		super();
+		System.out.println("Called constructor 6 parms");
 		this.id = id;
 		this.name = name;
 		this.email = email;

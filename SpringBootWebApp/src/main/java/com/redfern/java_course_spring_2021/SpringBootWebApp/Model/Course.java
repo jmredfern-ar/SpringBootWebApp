@@ -11,40 +11,26 @@ public class Course {
 	private Long id;
 	private String name;
 	private String department;
-	private String instructor;
-	
+	//private String instructor;
+		
 	@ManyToOne
 	private Student student;
+	
+	@ManyToOne
+	private Instructor instructor;
 	
 	// CONSTRUCTORS
 	public Course() {
 		super();
 	}
 	
-	public Course(String name, String department, String instructor) {
-		super();
-		this.name = name;
-		this.department = department;
-		this.instructor = instructor;
-	}
-
-	public Course(Long id, String name, String department, String instructor) {
+	public Course(Long id, String name, String department, Student student, Instructor instructor) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.department = department;
-		this.instructor = instructor;
-	}
-	
-	
-
-	public Course(Long id, String name, String department, String instructor, Student student) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.department = department;
-		this.instructor = instructor;
 		this.student = student;
+		this.instructor = instructor;
 	}
 
 	public Long getId() {
@@ -70,14 +56,6 @@ public class Course {
 	public void setDepartment(String department) {
 		this.department = department;
 	}
-
-	public String getInstructor() {
-		return instructor;
-	}
-
-	public void setInstructor(String instructor) {
-		this.instructor = instructor;
-	}
 	
 	public Student getStudent() {
 		return student;
@@ -85,6 +63,14 @@ public class Course {
 
 	public void setStudent(Student student) {
 		this.student = student;
+	}
+
+	public Instructor getInstructor() {
+		return instructor;
+	}
+
+	public void setInstructor(Instructor instructor) {
+		this.instructor = instructor;
 	}
 
 	@Override
