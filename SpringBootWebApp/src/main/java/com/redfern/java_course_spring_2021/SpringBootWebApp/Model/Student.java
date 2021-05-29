@@ -24,7 +24,7 @@ public class Student {
 	public Student() {
 		super();
 		System.out.println("Student constructor called...");
-		System.out.println(this.getName());
+		System.out.println();
 	}
 
 	public Student(Long id, String name, String email, LocalDate dob, Integer age) {
