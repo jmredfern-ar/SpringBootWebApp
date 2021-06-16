@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -19,6 +20,9 @@ public class Student {
 	
 	@OneToMany(mappedBy = "student")
 	private List<Course> courses;
+	
+	@ManyToMany
+	private List<Scholarship> scholarships;
 	
 	// CONSTRUCTORS
 	public Student() {
@@ -98,6 +102,15 @@ public class Student {
 
 	public void setCourses(List<Course> courses) {
 		this.courses = courses;
+	}
+	
+
+	public List<Scholarship> getScholarships() {
+		return scholarships;
+	}
+
+	public void setScholarships(List<Scholarship> scholarships) {
+		this.scholarships = scholarships;
 	}
 
 	@Override
