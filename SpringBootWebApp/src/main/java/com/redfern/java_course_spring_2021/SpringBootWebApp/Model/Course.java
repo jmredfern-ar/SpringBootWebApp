@@ -13,8 +13,8 @@ public class Course {
 	private String department;
 	//private String instructor;
 		
-	@ManyToOne
-	private Student student;
+//	@ManyToOne
+//	private Student student;
 	
 	@ManyToOne
 	private Instructor instructor;
@@ -24,14 +24,14 @@ public class Course {
 		super();
 	}
 	
-	public Course(Long id, String name, String department, Student student, Instructor instructor) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.department = department;
-		this.student = student;
-		this.instructor = instructor;
-	}
+//	public Course(Long id, String name, String department, Student student, Instructor instructor) {
+//		super();
+//		this.id = id;
+//		this.name = name;
+//		this.department = department;
+//		this.student = student;
+//		this.instructor = instructor;
+//	}
 
 	public Long getId() {
 		return id;
@@ -57,13 +57,13 @@ public class Course {
 		this.department = department;
 	}
 	
-	public Student getStudent() {
-		return student;
-	}
-
-	public void setStudent(Student student) {
-		this.student = student;
-	}
+//	public Student getStudent() {
+//		return student;
+//	}
+//
+//	public void setStudent(Student student) {
+//		this.student = student;
+//	}
 
 	public Instructor getInstructor() {
 		return instructor;
